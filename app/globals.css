@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --gq-bg: #0c1424; --gq-gold: #c7a451; }
+html, body { height: 100%; }
+body { background: var(--gq-bg); color: #e5e7eb; }
