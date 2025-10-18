@@ -25,7 +25,7 @@ export default function ContactPage() {
                         <div className="mt-3 space-y-2">
                            <a href="mailto:hello@groupoegq.com" className="flex items-center gap-3 group">
                                 <Mail className="h-4 w-4 text-slate-400 group-hover:text-[#c7a451]"/>
-                                <span>hello@groupoegq.com</span>
+                                <span>hello@groupegq.com</span>
                            </a>
                            <a href="tel:438-483-1249" className="flex items-center gap-3 group">
                                 <Phone className="h-4 w-4 text-slate-400 group-hover:text-[#c7a451]"/>
