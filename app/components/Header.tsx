@@ -1,11 +1,9 @@
-// app/components/Header.tsx
 'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Calendar } from 'lucide-react';
 
-// Define your navigation links in an array for easier management
 const navLinks = [
   { name: 'Offers', href: '/offers' },
   { name: 'Work', href: '/work' },

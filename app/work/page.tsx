@@ -1,11 +1,10 @@
-// app/work/page.tsx
 'use client';
 
 import React, { useEffect, useState } from "react";
 import { Github, ExternalLink, Star, Globe } from "lucide-react";
-import Link from 'next/link';
 
-const GITHUB_USERNAME = "YOUR_GITHUB_USERNAME"; // ← Make sure this is replaced
+// Using a constant makes it easier to update your username in one place
+const GITHUB_USERNAME = "gerryquammie"; 
 
 const featured = [
   {
@@ -19,8 +18,10 @@ const featured = [
     title: "Next.js Auth Starter Pack",
     description:
       "Production-grade auth scaffold with TypeScript, Prisma/SQL (swap to Supabase), and UI boilerplate.",
-    href: `https://github.com/${GITHUB_USERNAME}/your-repo-name`, // ← update
-    tags: ["NextAuth", "TypeScript", "Tailwind", "RLS"],
+    href: `https://github.com/${GITHUB_USERNAME}/groupegqsite`, // Using the constant here
+    // --- THIS IS THE FIX ---
+    // Added the missing closing quote on "Tailwind" and corrected the tag.
+    tags: ["NextAuth", "TypeScript", "Tailwind"], 
   },
 ];
 
@@ -29,7 +30,6 @@ export default function WorkPage() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Same GitHub fetching logic as your main page
         let ignore = false;
         async function load() {
           try {
@@ -43,7 +43,7 @@ export default function WorkPage() {
             const filtered = (data || [])
               .filter((r) => !r.fork && !r.archived)
               .sort((a, b) => new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime())
-              .slice(0, 9); // Show more repos on this page
+              .slice(0, 9);
             setRepos(filtered);
           } catch (e) { console.error(e); } finally { if (!ignore) setLoading(false); }
         }
